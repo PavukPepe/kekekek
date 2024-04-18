@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище OzonModelContainer" CdmEntityContainer="OzonEntities1">
+    <EntitySetMapping Name="Authorizations">
+      <EntityTypeMapping TypeName="OzonModel.Authorizations">
+        <MappingFragment StoreEntitySet="Authorizations">
+          <ScalarProperty Name="Auth_id" ColumnName="Auth_id" />
+          <ScalarProperty Name="Auth_login" ColumnName="Auth_login" />
+          <ScalarProperty Name="Auth_pass" ColumnName="Auth_pass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cart_Goods">
+      <EntityTypeMapping TypeName="OzonModel.Cart_Goods">
+        <MappingFragment StoreEntitySet="Cart_Goods">
+          <ScalarProperty Name="Cart_Goods_id" ColumnName="Cart_Goods_id" />
+          <ScalarProperty Name="ID_cart" ColumnName="ID_cart" />
+          <ScalarProperty Name="ID_goods" ColumnName="ID_goods" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cart_statuses">
+      <EntityTypeMapping TypeName="OzonModel.Cart_statuses">
+        <MappingFragment StoreEntitySet="Cart_statuses">
+          <ScalarProperty Name="Status_id" ColumnName="Status_id" />
+          <ScalarProperty Name="Status_name" ColumnName="Status_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Carts">
+      <EntityTypeMapping TypeName="OzonModel.Carts">
+        <MappingFragment StoreEntitySet="Carts">
+          <ScalarProperty Name="Cart_id" ColumnName="Cart_id" />
+          <ScalarProperty Name="ID_status" ColumnName="ID_status" />
+          <ScalarProperty Name="ID_user" ColumnName="ID_user" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Goods">
+      <EntityTypeMapping TypeName="OzonModel.Goods">
+        <MappingFragment StoreEntitySet="Goods">
+          <ScalarProperty Name="Good_ID" ColumnName="Good_ID" />
+          <ScalarProperty Name="Good_name" ColumnName="Good_name" />
+          <ScalarProperty Name="Good_price" ColumnName="Good_price" />
+          <ScalarProperty Name="Good_amount" ColumnName="Good_amount" />
+          <ScalarProperty Name="ID_Good_category" ColumnName="ID_Good_category" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Goods_categories">
+      <EntityTypeMapping TypeName="OzonModel.Goods_categories">
+        <MappingFragment StoreEntitySet="Goods_categories">
+          <ScalarProperty Name="Good_category_ID" ColumnName="Good_category_ID" />
+          <ScalarProperty Name="Good_category_name" ColumnName="Good_category_name" />
+          <ScalarProperty Name="ID_Pack_type" ColumnName="ID_Pack_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Package_types">
+      <EntityTypeMapping TypeName="OzonModel.Package_types">
+        <MappingFragment StoreEntitySet="Package_types">
+          <ScalarProperty Name="Pack_type_id" ColumnName="Pack_type_id" />
+          <ScalarProperty Name="Pack_type_name" ColumnName="Pack_type_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Posts">
+      <EntityTypeMapping TypeName="OzonModel.Posts">
+        <MappingFragment StoreEntitySet="Posts">
+          <ScalarProperty Name="Post_id" ColumnName="Post_id" />
+          <ScalarProperty Name="Post_name" ColumnName="Post_name" />
+          <ScalarProperty Name="Post_salary" ColumnName="Post_salary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pvzs">
+      <EntityTypeMapping TypeName="OzonModel.Pvzs">
+        <MappingFragment StoreEntitySet="Pvzs">
+          <ScalarProperty Name="Pvz_id" ColumnName="Pvz_id" />
+          <ScalarProperty Name="Pvz_address" ColumnName="Pvz_address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="OzonModel.Roles">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="Role_id" ColumnName="Role_id" />
+          <ScalarProperty Name="Role_name" ColumnName="Role_name" />
+          <ScalarProperty Name="ID_post" ColumnName="ID_post" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="OzonModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="User__id" ColumnName="User__id" />
+          <ScalarProperty Name="User__name" ColumnName="User__name" />
+          <ScalarProperty Name="User__surname" ColumnName="User__surname" />
+          <ScalarProperty Name="User__middlename" ColumnName="User__middlename" />
+          <ScalarProperty Name="ID_pvz" ColumnName="ID_pvz" />
+          <ScalarProperty Name="ID_Auth" ColumnName="ID_Auth" />
+          <ScalarProperty Name="ID_Role" ColumnName="ID_Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="BackupOzon" FunctionName="Хранилище OzonModel.BackupOzon" />
+  </EntityContainerMapping>
+</Mapping>

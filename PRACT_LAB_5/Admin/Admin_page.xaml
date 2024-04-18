@@ -1,0 +1,57 @@
+﻿<Page x:Class="PRACT_LAB_5.Admin.Admin_page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PRACT_LAB_5.Admin"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="800"
+      Title="Admin_page">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button x:Name ="exit_but" Content="Выход" Grid.Column="0" Click="exit_but_Click" Background="#FFFF020E" BorderBrush="#FFB73A3A"></Button>
+            <Button x:Name ="back_but" Content="Бэкап" Grid.Column="1" Click="back_but_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Button x:Name ="package_but" Content="Типы упаковок" Grid.Column="2" Click="package_but_Click"></Button>
+            <Button x:Name ="category_but" Content="Типы товаров" Grid.Column="3" Click="category_but_Click"></Button>
+            <Button x:Name ="good_but" Content="Товары" Grid.Column="4" Click="good_but_Click"></Button>
+            <Button x:Name ="role_but" Content="Роли" Grid.Column="5" Click="role_but_Click"></Button>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button x:Name ="pvzs_but" Content="Роли" Grid.Column="0" Click="pvzs_but_Click"></Button>
+            <Button x:Name ="user_but" Content="Пользователи" Grid.Column="1" Click="user_but_Click"></Button>
+            <Button x:Name ="auth_but" Content="Логины" Grid.Column="2" Click="auth_but_Click"></Button>
+            <Button x:Name ="order_but" Content="Заказы" Grid.Column="3" Click="order_but_Click"></Button>
+            <Button x:Name ="posts_but" Content="Должности" Grid.Column="4" Click="posts_but_Click"></Button>
+            <Button x:Name ="statuses_but" Content="Статусы" Grid.Column="5" Click="statuses_but_Click"></Button>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="161*"/>
+                <ColumnDefinition Width="640*"/>
+            </Grid.ColumnDefinitions>
+            <Frame x:Name="teble_frame" NavigationUIVisibility="Hidden" Grid.ColumnSpan="2"></Frame>
+        </Grid>
+    </Grid>
+</Page>

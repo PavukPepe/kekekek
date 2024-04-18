@@ -1,0 +1,40 @@
+﻿<Page x:Class="PRACT_LAB_5.Goods_categories_page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:PRACT_LAB_5"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Goods_categories_page">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="12*"></ColumnDefinition>
+            <ColumnDefinition Width="6*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <DataGrid Grid.Column="0" x:Name="table_grid" SelectionChanged="table_grid_SelectionChanged" IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Good_category_name}" Header="Категория товара"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Package_types.Pack_type_name}" Header="Тип упаковки"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Column="1">
+            <TextBlock Text="Данные для заполнения" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            <Line></Line>
+            <TextBox x:Name="category_name" DataContext="Название упаковки" materialDesign:HintAssist.Hint="Название категории" TextChanged="category_name_TextChanged"></TextBox>
+            <ComboBox x:Name="pack_types" SelectionChanged="pack_types_SelectionChanged" materialDesign:HintAssist.Hint="Тип упаковки"></ComboBox>
+        </StackPanel>
+        <Grid VerticalAlignment="Bottom" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="Alt_but" Content="Изменить" Grid.Column="0" Click="Alt_but_Click"></Button>
+            <Button x:Name="Add_but" Content="Добавить" Grid.Column="1" Click="Add_but_Click"></Button>
+            <Button x:Name="Del_bat" Content="Удалить" Grid.Column="2" Click="Del_bat_Click"></Button>
+        </Grid>
+    </Grid>
+</Page>

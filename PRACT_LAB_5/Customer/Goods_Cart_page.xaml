@@ -1,0 +1,47 @@
+﻿<Page x:Class="PRACT_LAB_5.Properties.Goods_Cart_page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PRACT_LAB_5.Properties"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="1000"
+      Title="Goods_Cart_page">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="10*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition/>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        
+        <Button x:Name="order_but" Content="Оформить заказ" Grid.Row="3" Grid.Column="2" Click="order_but_Click"></Button>
+        <Button x:Name="clear_cart_but" Content="Отчистить корзину" Grid.Row="2" Grid.Column="2" Click="clear_cart_but_Click"></Button>
+
+        <Button x:Name="add_good_but" Content=">" Grid.Row="0" Grid.Column="1" Click="add_good_but_Click_1"></Button>
+        <Button x:Name="del_good_but" Content="&lt;" Grid.Row="1" Grid.Column="1" Click="del_good_but_Click"></Button>
+
+        <DataGrid Grid.RowSpan="4" x:Name="goods_grid" IsReadOnly="True" AutoGenerateColumns="False" SelectionChanged="goods_grid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Good_name}" Header="Наименование"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Goods_categories.Good_category_name}" Header="Категория товара"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Good_price}" Header="Цена за шт."></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid Grid.Column="2"  Grid.RowSpan="2" x:Name="cart_grid" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Goods.Good_name}" Header="Наименование"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Goods.Goods_categories.Good_category_name}" Header="Категория товара"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding amount}" Header="Кол-во"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding cum_sum}" Header="Цена"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

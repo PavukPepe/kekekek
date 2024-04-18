@@ -1,0 +1,30 @@
+﻿<Page x:Class="PRACT_LAB_5.PVZ.PVZ_page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PRACT_LAB_5.PVZ"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PVZ_page">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="8*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button x:Name ="exit_but" Content="Выход" Grid.Column="0" Click="exit_but_Click" Background="#FFFF020E" BorderBrush="#FFB73A3A"></Button>
+            <Button x:Name ="orders_but" Content="Заказы" Grid.Column="1" Grid.ColumnSpan="3" Click="orders_but_Click"></Button>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Frame x:Name="teble_frame" NavigationUIVisibility="Hidden"></Frame>
+        </Grid>
+    </Grid>
+</Page>

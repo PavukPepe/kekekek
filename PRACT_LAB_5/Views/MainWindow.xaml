@@ -1,0 +1,27 @@
+﻿<Window x:Class="PRACT_LAB_5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PRACT_LAB_5"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="400"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="30">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Авторизация" HorizontalAlignment="Center"></TextBlock>
+        
+        <TextBox Text="{Binding LoginText}" x:Name="login" Grid.Row="1" materialDesign:HintAssist.Hint="Логин" VerticalAlignment="Center"></TextBox>
+        <TextBox Text="{Binding PassText}" x:Name="pass" Grid.Row="2" materialDesign:HintAssist.Hint="Пароль" VerticalAlignment="Center"></TextBox>
+
+        <Button Content="Войти" x:Name="ent_but" Grid.Row="3" Margin="5" Command="{Binding Enter}"></Button>
+        <Button Content="Зарегиcтрироваться" x:Name="reg_but" Grid.Row="4" Margin="5" Click="reg_but_Click"></Button>
+    </Grid>
+</Window>

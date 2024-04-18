@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OzonModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Authorizations">
+    <Key>
+      <PropertyRef Name="Auth_id" />
+    </Key>
+    <Property Name="Auth_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Auth_login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Auth_pass" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__Users__ID_Auth__59063A47" FromRole="Authorizations" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Cart_Goods">
+    <Key>
+      <PropertyRef Name="Cart_Goods_id" />
+    </Key>
+    <Property Name="Cart_Goods_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_cart" Type="Int32" Nullable="false" />
+    <Property Name="ID_goods" Type="Int32" Nullable="false" />
+    <Property Name="amount" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Carts" Relationship="Self.FK__Cart_Good__ID_ca__6E01572D" FromRole="Cart_Goods" ToRole="Carts" />
+    <NavigationProperty Name="Goods" Relationship="Self.FK__Cart_Good__ID_go__6EF57B66" FromRole="Cart_Goods" ToRole="Goods" />
+  </EntityType>
+  <EntityType Name="Cart_statuses">
+    <Key>
+      <PropertyRef Name="Status_id" />
+    </Key>
+    <Property Name="Status_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Status_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Carts" Relationship="Self.FK__Carts__ID_status__5FB337D6" FromRole="Cart_statuses" ToRole="Carts" />
+  </EntityType>
+  <EntityType Name="Carts">
+    <Key>
+      <PropertyRef Name="Cart_id" />
+    </Key>
+    <Property Name="Cart_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_status" Type="Int32" Nullable="false" />
+    <Property Name="ID_user" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Cart_Goods" Relationship="Self.FK__Cart_Good__ID_ca__6E01572D" FromRole="Carts" ToRole="Cart_Goods" />
+    <NavigationProperty Name="Cart_statuses" Relationship="Self.FK__Carts__ID_status__5FB337D6" FromRole="Carts" ToRole="Cart_statuses" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__Carts__ID_user__60A75C0F" FromRole="Carts" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Goods">
+    <Key>
+      <PropertyRef Name="Good_ID" />
+    </Key>
+    <Property Name="Good_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Good_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Good_price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Good_amount" Type="Int32" Nullable="false" />
+    <Property Name="ID_Good_category" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Cart_Goods" Relationship="Self.FK__Cart_Good__ID_go__6EF57B66" FromRole="Goods" ToRole="Cart_Goods" />
+    <NavigationProperty Name="Goods_categories" Relationship="Self.FK__Goods__ID_Good_c__6B24EA82" FromRole="Goods" ToRole="Goods_categories" />
+  </EntityType>
+  <EntityType Name="Goods_categories">
+    <Key>
+      <PropertyRef Name="Good_category_ID" />
+    </Key>
+    <Property Name="Good_category_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Good_category_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_Pack_type" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Goods" Relationship="Self.FK__Goods__ID_Good_c__6B24EA82" FromRole="Goods_categories" ToRole="Goods" />
+    <NavigationProperty Name="Package_types" Relationship="Self.FK__Goods_cat__ID_Pa__6754599E" FromRole="Goods_categories" ToRole="Package_types" />
+  </EntityType>
+  <EntityType Name="Package_types">
+    <Key>
+      <PropertyRef Name="Pack_type_id" />
+    </Key>
+    <Property Name="Pack_type_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Pack_type_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Goods_categories" Relationship="Self.FK__Goods_cat__ID_Pa__6754599E" FromRole="Package_types" ToRole="Goods_categories" />
+  </EntityType>
+  <EntityType Name="Posts">
+    <Key>
+      <PropertyRef Name="Post_id" />
+    </Key>
+    <Property Name="Post_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Post_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Post_salary" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Roles" Relationship="Self.FK__Roles__ID_post__5070F446" FromRole="Posts" ToRole="Roles" />
+  </EntityType>
+  <EntityType Name="Pvzs">
+    <Key>
+      <PropertyRef Name="Pvz_id" />
+    </Key>
+    <Property Name="Pvz_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Pvz_address" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__Users__ID_pvz__5812160E" FromRole="Pvzs" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="Role_id" />
+    </Key>
+    <Property Name="Role_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Role_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_post" Type="Int32" />
+    <NavigationProperty Name="Posts" Relationship="Self.FK__Roles__ID_post__5070F446" FromRole="Roles" ToRole="Posts" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__Users__ID_Role__59FA5E80" FromRole="Roles" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="User__id" />
+    </Key>
+    <Property Name="User__id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User__name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="User__surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="User__middlename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ID_pvz" Type="Int32" Nullable="false" />
+    <Property Name="ID_Auth" Type="Int32" Nullable="false" />
+    <Property Name="ID_Role" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Authorizations" Relationship="Self.FK__Users__ID_Auth__59063A47" FromRole="Users" ToRole="Authorizations" />
+    <NavigationProperty Name="Carts" Relationship="Self.FK__Carts__ID_user__60A75C0F" FromRole="Users" ToRole="Carts" />
+    <NavigationProperty Name="Pvzs" Relationship="Self.FK__Users__ID_pvz__5812160E" FromRole="Users" ToRole="Pvzs" />
+    <NavigationProperty Name="Roles" Relationship="Self.FK__Users__ID_Role__59FA5E80" FromRole="Users" ToRole="Roles" />
+  </EntityType>
+  <Association Name="FK__Users__ID_Auth__59063A47">
+    <End Role="Authorizations" Type="Self.Authorizations" Multiplicity="1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Authorizations">
+        <PropertyRef Name="Auth_id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="ID_Auth" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Cart_Good__ID_ca__6E01572D">
+    <End Role="Carts" Type="Self.Carts" Multiplicity="1" />
+    <End Role="Cart_Goods" Type="Self.Cart_Goods" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Carts">
+        <PropertyRef Name="Cart_id" />
+      </Principal>
+      <Dependent Role="Cart_Goods">
+        <PropertyRef Name="ID_cart" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Cart_Good__ID_go__6EF57B66">
+    <End Role="Goods" Type="Self.Goods" Multiplicity="1" />
+    <End Role="Cart_Goods" Type="Self.Cart_Goods" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Goods">
+        <PropertyRef Name="Good_ID" />
+      </Principal>
+      <Dependent Role="Cart_Goods">
+        <PropertyRef Name="ID_goods" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Carts__ID_status__5FB337D6">
+    <End Role="Cart_statuses" Type="Self.Cart_statuses" Multiplicity="1" />
+    <End Role="Carts" Type="Self.Carts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cart_statuses">
+        <PropertyRef Name="Status_id" />
+      </Principal>
+      <Dependent Role="Carts">
+        <PropertyRef Name="ID_status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Carts__ID_user__60A75C0F">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Carts" Type="Self.Carts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User__id" />
+      </Principal>
+      <Dependent Role="Carts">
+        <PropertyRef Name="ID_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Goods__ID_Good_c__6B24EA82">
+    <End Role="Goods_categories" Type="Self.Goods_categories" Multiplicity="1" />
+    <End Role="Goods" Type="Self.Goods" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Goods_categories">
+        <PropertyRef Name="Good_category_ID" />
+      </Principal>
+      <Dependent Role="Goods">
+        <PropertyRef Name="ID_Good_category" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Goods_cat__ID_Pa__6754599E">
+    <End Role="Package_types" Type="Self.Package_types" Multiplicity="1" />
+    <End Role="Goods_categories" Type="Self.Goods_categories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Package_types">
+        <PropertyRef Name="Pack_type_id" />
+      </Principal>
+      <Dependent Role="Goods_categories">
+        <PropertyRef Name="ID_Pack_type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Roles__ID_post__5070F446">
+    <End Role="Posts" Type="Self.Posts" Multiplicity="0..1" />
+    <End Role="Roles" Type="Self.Roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Posts">
+        <PropertyRef Name="Post_id" />
+      </Principal>
+      <Dependent Role="Roles">
+        <PropertyRef Name="ID_post" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Users__ID_pvz__5812160E">
+    <End Role="Pvzs" Type="Self.Pvzs" Multiplicity="1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pvzs">
+        <PropertyRef Name="Pvz_id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="ID_pvz" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Users__ID_Role__59FA5E80">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="Role_id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="ID_Role" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="OzonEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Authorizations" EntityType="Self.Authorizations" />
+    <EntitySet Name="Cart_Goods" EntityType="Self.Cart_Goods" />
+    <EntitySet Name="Cart_statuses" EntityType="Self.Cart_statuses" />
+    <EntitySet Name="Carts" EntityType="Self.Carts" />
+    <EntitySet Name="Goods" EntityType="Self.Goods" />
+    <EntitySet Name="Goods_categories" EntityType="Self.Goods_categories" />
+    <EntitySet Name="Package_types" EntityType="Self.Package_types" />
+    <EntitySet Name="Posts" EntityType="Self.Posts" />
+    <EntitySet Name="Pvzs" EntityType="Self.Pvzs" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <AssociationSet Name="FK__Users__ID_Auth__59063A47" Association="Self.FK__Users__ID_Auth__59063A47">
+      <End Role="Authorizations" EntitySet="Authorizations" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Cart_Good__ID_ca__6E01572D" Association="Self.FK__Cart_Good__ID_ca__6E01572D">
+      <End Role="Carts" EntitySet="Carts" />
+      <End Role="Cart_Goods" EntitySet="Cart_Goods" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Cart_Good__ID_go__6EF57B66" Association="Self.FK__Cart_Good__ID_go__6EF57B66">
+      <End Role="Goods" EntitySet="Goods" />
+      <End Role="Cart_Goods" EntitySet="Cart_Goods" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Carts__ID_status__5FB337D6" Association="Self.FK__Carts__ID_status__5FB337D6">
+      <End Role="Cart_statuses" EntitySet="Cart_statuses" />
+      <End Role="Carts" EntitySet="Carts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Carts__ID_user__60A75C0F" Association="Self.FK__Carts__ID_user__60A75C0F">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Carts" EntitySet="Carts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Goods__ID_Good_c__6B24EA82" Association="Self.FK__Goods__ID_Good_c__6B24EA82">
+      <End Role="Goods_categories" EntitySet="Goods_categories" />
+      <End Role="Goods" EntitySet="Goods" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Goods_cat__ID_Pa__6754599E" Association="Self.FK__Goods_cat__ID_Pa__6754599E">
+      <End Role="Package_types" EntitySet="Package_types" />
+      <End Role="Goods_categories" EntitySet="Goods_categories" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Roles__ID_post__5070F446" Association="Self.FK__Roles__ID_post__5070F446">
+      <End Role="Posts" EntitySet="Posts" />
+      <End Role="Roles" EntitySet="Roles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Users__ID_pvz__5812160E" Association="Self.FK__Users__ID_pvz__5812160E">
+      <End Role="Pvzs" EntitySet="Pvzs" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Users__ID_Role__59FA5E80" Association="Self.FK__Users__ID_Role__59FA5E80">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <FunctionImport Name="BackupOzon" />
+  </EntityContainer>
+</Schema>

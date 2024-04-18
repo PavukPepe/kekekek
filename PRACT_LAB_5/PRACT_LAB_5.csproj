@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D61A6839-C4AC-4BC9-AF74-415B1D7D8FE4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PRACT_LAB_5</RootNamespace>
+    <AssemblyName>PRACT_LAB_5</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=3.0.0.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.3.0.0\lib\net462\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=5.0.0.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.5.0.0\lib\net462\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.39\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Admin\Admin_page.xaml.cs">
+      <DependentUpon>Admin_page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Auth_page.xaml.cs">
+      <DependentUpon>Auth_page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Orders_admin_page.xaml.cs">
+      <DependentUpon>Orders_admin_page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Posts_page.xaml.cs">
+      <DependentUpon>Posts_page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PVZs_page.xaml.cs">
+      <DependentUpon>PVZs_page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Statuses_page.xaml.cs">
+      <DependentUpon>Statuses_page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Users_page.xaml.cs">
+      <DependentUpon>Users_page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Authorizations.cs">
+      <DependentUpon>Ozon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Carts.cs">
+      <DependentUpon>Ozon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cart_Goods.cs">
+      <DependentUpon>Ozon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cart_statuses.cs">
+      <DependentUpon>Ozon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Customer_page.xaml.cs">
+      <DependentUpon>Customer_page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Orders_page.xaml.cs">
+      <DependentUpon>Orders_page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Goods.cs">
+      <DependentUpon>Ozon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Goods_categories.cs">
+      <DependentUpon>Ozon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HR\Employeers_page.xaml.cs">
+      <DependentUpon>Employeers_page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ozon.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ozon.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ozon.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ozon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ozon.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ozon.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Package_types.cs">
+      <DependentUpon>Ozon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Posts.cs">
+      <DependentUpon>Ozon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pvzs.cs">
+      <DependentUpon>Ozon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\WorkerViewModel.cs" />
+    <Compile Include="PVZ\Orders_pvz_page.xaml.cs">
+      <DependentUpon>Orders_pvz_page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PVZ\PVZ_page.xaml.cs">
+      <DependentUpon>PVZ_page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Roles.cs">
+      <DependentUpon>Ozon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Storager\Goods_categories_page.xaml.cs">
+      <DependentUpon>Goods_categories_page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Storager\Goods_page.xaml.cs">
+      <DependentUpon>Goods_page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HR\HR_page.xaml.cs">
+      <DependentUpon>HR_page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HR\Kandidate_page.xaml.cs">
+      <DependentUpon>Kandidate_page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Storager\Order_storage_page.xaml.cs">
+      <DependentUpon>Order_storage_page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Storager\Package_types_page.xaml.cs">
+      <DependentUpon>Package_types_page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Goods_Cart_page.xaml.cs">
+      <DependentUpon>Goods_Cart_page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\RegViewModel.cs" />
+    <Compile Include="Views\Registration_win.xaml.cs">
+      <DependentUpon>Registration_win.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HR\Roles_page.xaml.cs">
+      <DependentUpon>Roles_page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Storager\Storager_page.xaml.cs">
+      <DependentUpon>Storager_page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Users.cs">
+      <DependentUpon>Ozon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\Helpers\BindingHelper.cs" />
+    <Compile Include="ViewModels\Helpers\CommandHelper.cs" />
+    <Compile Include="Views\Work_win.xaml.cs">
+      <DependentUpon>Work_win.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Admin\Admin_page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin\Auth_page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin\Orders_admin_page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin\Posts_page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin\PVZs_page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin\Statuses_page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin\Users_page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Customer\Customer_page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Customer\Orders_page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HR\Employeers_page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PVZ\Orders_pvz_page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PVZ\PVZ_page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Storager\Goods_categories_page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Storager\Goods_page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HR\HR_page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HR\Kandidate_page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Storager\Order_storage_page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Storager\Package_types_page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Customer\Goods_Cart_page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Registration_win.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HR\Roles_page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Storager\Storager_page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Work_win.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EntityDeploy Include="Ozon.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Ozon.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Ozon.edmx.diagram">
+      <DependentUpon>Ozon.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Ozon.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Ozon.edmx</DependentUpon>
+      <LastGenOutput>Ozon.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Ozon.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Ozon.edmx</DependentUpon>
+      <LastGenOutput>Ozon.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\MaterialDesignThemes.5.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.5.0.0\build\MaterialDesignThemes.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MaterialDesignThemes.5.0.0\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.5.0.0\build\MaterialDesignThemes.targets'))" />
+  </Target>
+</Project>
